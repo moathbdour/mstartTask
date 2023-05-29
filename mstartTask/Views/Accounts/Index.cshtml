@@ -1,0 +1,86 @@
+﻿@model IEnumerable<mstartTask.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h2>All Accounts</h2>
+<form method="get">
+    <p> Search By</p>
+    <select required name="value">
+        <option></option>
+        <option value="id">user id</option>
+        <option value="account">account ID</option>
+        <option value="number">account number.</option>
+    </select>
+    <input required type="text" name="search" />
+    <button type="submit"class="btn btn-primary">Search</button>
+</form>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Server_DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTime_UTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Update_DateTime_UTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Server_DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTime_UTC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Update_DateTime_UTC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Currency)
+        </td>
+        <td>
+            @Enum.GetName(typeof(mstartTask.Models.Status), item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

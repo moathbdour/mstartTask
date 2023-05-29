@@ -1,0 +1,99 @@
+﻿@model mstartTask.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Server_DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Server_DateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime_UTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime_UTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Update_DateTime_UTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Update_DateTime_UTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Enum.GetName(typeof(mstartTask.Models.Status), Model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Enum.GetName(typeof(mstartTask.Models.Gender), Model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_Of_Birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_Of_Birth)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+</p>
