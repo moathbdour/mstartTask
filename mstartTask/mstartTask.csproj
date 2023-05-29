@@ -179,6 +179,7 @@
     <Content Include="focus-2\.gitattributes" />
     <Content Include="focus-2\css\perfect-scrollbar.css" />
     <Content Include="focus-2\css\style.css" />
+    <Content Include="focus-2\css\StyleSheet1.css" />
     <Content Include="focus-2\documentation\calendar.html" />
     <Content Include="focus-2\documentation\chart.html" />
     <Content Include="focus-2\documentation\colorpicker.html" />
